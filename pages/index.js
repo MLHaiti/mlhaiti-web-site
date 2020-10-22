@@ -1,19 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import { Box, Text, Input, InputGroup, InputLeftAddon, Icon, Button, Flex, Link } from '@chakra-ui/core';
+import { Box, Text, Input, InputGroup, InputLeftAddon, Icon, Button, Link } from '@chakra-ui/core';
+import CustomInput from '../components/CustomInput'
 
-const CustomInput = ({ label, name, size, color, inputSize, type }) => {
-  return(
-    <Box my="3">
-      <Text fontSize="sm" mb="2">{label}</Text>
-      <InputGroup>
-        <InputLeftAddon children={<Icon name={name} size={size} color={color} />} />
-        <Input size={inputSize} type={type} />
-      </InputGroup>
-    </Box>
-);
-}
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -31,7 +21,7 @@ export default function Home() {
           <CustomInput name="email" type="text" label="Email address" size="24px" color="gray.300" inputSize="md" />
           <CustomInput name="lock" type="password" label="Password" size="24px" color="gray.300" inputSize="md" />
           <Button size="lg" width="100%" variant="solid">Login</Button>
-          <Box d="flex" alignItems="center" justifyContent="center" mt="6">forget your password ? <Link>sign up</Link> </Box>
+          <Box d="flex" alignItems="center" justifyContent="center" mt="6">forget your password ? <Link href="/register">sign up</Link> </Box>
         </Box>        
       </main>
 
